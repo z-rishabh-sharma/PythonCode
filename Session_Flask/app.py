@@ -39,7 +39,7 @@
 #             return new_item, 201
 #     return {"message": "Store not found"}, 404
 
-from . import route, config, models, services
+from src import route as R, config as C, models as M, services as S
 from flask import Flask
 from flask_cors import CORS # cross origin resouce sharing
 
@@ -50,11 +50,13 @@ def create_app():
     
     # Now we will go through from each modules and add there functionality
     
-    app = config.init_app(app)
-    app = models.init_app(app)
-    app = route.init_app(app)
-    app = services.init_app(app)
+    app = C.init_app(app)
+    app = M.init_app(app)
+    app = R.init_app(app)
+    app = S.init_app(app)
+    return app
     
-    if __name__ == "__main__":
-        app.run(debug=True, host="0.0.0.0")
+if __name__ == "__main__":
+    app = create_app()
+    app.run(debug=True, host="0.0.0.0")
         

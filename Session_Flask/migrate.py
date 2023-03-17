@@ -35,4 +35,8 @@ Base.query = db_session.query_property()
 
 if __name__ == "__main__":
     Base.metadata.create_all(bind=engine)
+    items =Items(id=1, name="XYX", description="This is a description")
+    db_session.add(items)
+    shop = Shops(id=1, name="General", description="this is a description")
+    db_session.add(shop)
     db_session.commit()

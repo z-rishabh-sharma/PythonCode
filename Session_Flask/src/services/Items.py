@@ -8,7 +8,7 @@ class ItemServices(MethodView):
     
     def __init__(self):
         self.id = None
-    
+    # Override
     def get(self, *args, **kwargs):
         result = get_items()
         result = {"success":True, "result":result}

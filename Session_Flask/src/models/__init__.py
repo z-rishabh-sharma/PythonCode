@@ -4,8 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 db = SQLAlchemy() # calling the sqlalchemy instance create
-
+# db is a instance of the SQLAlchemy
 def init_app(app):
-    db.init_app(app)
+    db.init_app(app) #
     # migrate = Migrate(app, db)
     return app

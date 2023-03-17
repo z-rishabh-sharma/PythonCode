@@ -3,8 +3,12 @@
 # table shops and items (Datbase name "inventory", u = "root")
 # here we are includiong those thing that will going to be same in the dev and prod
 import os
+from dotenv import load_dotenv
 
-ROOT_DIR = os.path.join(os.path.dirname(__file__), "../")
+ROOT_DIR = os.path.join(os.path.dirname(__file__), "../..")
+DOT_ENV_PATH = os.path.join(ROOT_DIR, ".env")
+# print(DOT_ENV_PATH)
+load_dotenv(DOT_ENV_PATH) # this goes into memory
 
 class Base_Config(object):
     
